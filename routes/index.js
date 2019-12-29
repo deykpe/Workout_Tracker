@@ -10,8 +10,9 @@ router.get('/api/alltransaction', (request, response){
     })
 })
 
-router.get('/api/alltransaction', (request, response){
-    db.find(({})).then(function(records){
+router.post('/api/alltransaction', (request, response){
+
+    db.create((request.body)).then(function(records){
         response.json(records)
     })
     .catch((error){
