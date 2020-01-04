@@ -3,23 +3,23 @@ const Schema = mongoose.Schema
 
 const workout1schema = new Schema(
     {
-        workoutname: (
+        workoutname: {
             type: String,
             required: "enter workoutname"
             
-        ),
-        numberofreps: (
+        },
+        numberofreps: {
             type: Number,
             required: "enter rep count"
             
-        ),
-        date: (
+        },
+        date: {
             type: Date,
             default: Date.now
             
-        )
+        }
     }
-)
+);
 
 const Workout1 = mongoose.model('Workout1', workout1schema)
 
