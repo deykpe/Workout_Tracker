@@ -5,18 +5,23 @@ const workout1schema = new Schema(
     {
         workoutname: {
             type: String,
-            required: "enter workoutname"
-            
+            required: "enter workoutname"   
         },
+        exercise: [{
+            exerciseName: {
+                type: String,
+                required: "enter exercise"   
+            },
+            
         numberofreps: {
             type: Number,
-            required: "enter rep count"
-            
-        },
+            required: "enter rep count" 
+        }
+    }
+        ],
         date: {
             type: Date,
-            default: Date.now
-            
+            default: Date.now 
         }
     }
 );
