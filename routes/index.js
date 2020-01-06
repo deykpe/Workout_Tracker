@@ -15,6 +15,7 @@ router.get('/api/alltransaction', function (request, response){
 router.post('/api/newworkout', function (request, response){
 
     db.create((request.body)).then(function(records){
+        console.log(records)
         response.json(records)
     })
     .catch( function (error){
@@ -23,11 +24,12 @@ router.post('/api/newworkout', function (request, response){
 })
 
 router.put('/api/addexercise/:id', function (request, response){
+    console.log(request.params.id, request.body)
+    db.findByIdAndUpdate(
+         request.params.id,
 
-    db.findOneAndUpdate({
-        _id: request.params.id
-        
-    },{push:{exercise:request.body}}).then(function(records){
+     {'$push':{'exercise':request.body}}).then(function(records){
+        console.log(records)
         response.json(records)
     })
     .catch( function (error){

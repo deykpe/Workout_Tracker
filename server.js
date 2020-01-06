@@ -14,9 +14,11 @@ mongoose.connect('mongodb://localhost/workout', {
 })
 
 app.use(require('./routes'))
+app.use(express.static('public'))
 
 app.listen(port, function() {
 console.log('port is working on 8080')
 })
+
 
 

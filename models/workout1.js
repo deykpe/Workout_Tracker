@@ -4,18 +4,18 @@ const Schema = mongoose.Schema
 const workout1schema = new Schema(
     {
         workoutname: {
-            type: String,
-            required: "enter workoutname"   
+            type: String
+            // required: "enter workoutname"   
         },
         exercise: [{
-            exerciseName: {
-                type: String,
-                required: "enter exercise"   
+            exercisename: {
+                type: String
+                // required: "enter exercise"   
             },
             
         numberofreps: {
-            type: Number,
-            required: "enter rep count" 
+            type: Number
+            // required: "enter rep count" 
         }
     }
         ],
