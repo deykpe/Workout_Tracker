@@ -43,7 +43,41 @@ $('#new').on('click', function (e){
         success: function(data) {
             console.log(data)
            
+            location.reload()
             // $('#after')(`workout:${data.workoutname}`)
         }
-    })
-})
+    });
+});
+
+
+$.ajax({
+    type: 'GET',
+    url: '/api/alltransaction',
+   
+    success: function(data) {
+        console.log(data)
+        var fitness
+        var exercise
+
+        for (i = 0; i <data.length; i++) {
+            fitness += `<div>
+            
+            <h1 class='goaway'>${data[i]._id}</h1>
+            <h1>workoutname: ${data[i].workoutname}</h1>
+           
+            </div>`
+        for (j = 0; j <data[i].exercise.length; j++) {
+             exercise += `<div>
+            
+            <h1>exercisename: ${data[i].exercise[j].exercisename}</h1>
+            <h1>numberofreps: ${data[i].exercise[j].numberofreps}</h1>
+          
+            </div>`
+        }
+
+        fitness += exercise
+        exercise = ''
+        }
+        $('#after').append(fitness)
+    }
+});
