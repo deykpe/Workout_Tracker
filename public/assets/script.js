@@ -4,6 +4,7 @@ $('#save').on('click', function (e){
     e.preventDefault()
     var data = {
         workoutname: $('#workoutname').val()
+        
         // exercise: [{
         //     exercisename: $('#exercisename').val(),
         //     numberofreps: $('#numberofreps').val()
